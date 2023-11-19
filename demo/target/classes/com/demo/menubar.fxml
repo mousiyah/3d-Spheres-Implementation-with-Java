@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ColorPicker?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.effect.InnerShadow?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.paint.Color?>
+
+<GridPane alignment="CENTER" hgap="10.0" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.demo.Controller">
+   <columnConstraints>
+      <ColumnConstraints halignment="CENTER" hgrow="ALWAYS" percentWidth="10.0" />
+      <ColumnConstraints halignment="CENTER" hgrow="ALWAYS" percentWidth="70.0" />
+      <ColumnConstraints halignment="CENTER" hgrow="ALWAYS" percentWidth="20.0" />
+   </columnConstraints>
+   <rowConstraints>
+      <RowConstraints prefHeight="30.0" vgrow="ALWAYS" />
+      <RowConstraints prefHeight="30.0" vgrow="ALWAYS" />
+      <RowConstraints prefHeight="30.0" vgrow="ALWAYS" />
+      <RowConstraints prefHeight="30.0" vgrow="ALWAYS" />
+      <RowConstraints prefHeight="30.0" vgrow="ALWAYS" />
+      <RowConstraints prefHeight="30.0" vgrow="ALWAYS" />
+      <RowConstraints prefHeight="30.0" vgrow="ALWAYS" />
+      <RowConstraints prefHeight="30.0" vgrow="ALWAYS" />
+      <RowConstraints />
+   </rowConstraints>
+   <children>
+      <Label text="red" />
+      <Label text="green" GridPane.rowIndex="1" />
+      <Label text="blue" GridPane.rowIndex="2" />
+      <Label text="X" GridPane.rowIndex="3" />
+      <Label text="Y" GridPane.rowIndex="4" />
+      <Label text="Z" GridPane.rowIndex="5" />
+      <Label text="radius" GridPane.rowIndex="6" />
+      <Label text="azimuth" GridPane.rowIndex="7" />
+      <Label text="altitude" GridPane.rowIndex="8" />
+      <Slider fx:id="redSlider" majorTickUnit="5.0" max="255.0" minorTickCount="0" showTickLabels="true" showTickMarks="true" value="250.0" GridPane.columnIndex="1">
+         <effect>
+            <InnerShadow>
+               <color>
+                  <Color red="1.0" />
+               </color>
+            </InnerShadow>
+         </effect></Slider>
+      <Slider fx:id="greenSlider" max="255.0" minorTickCount="5" showTickLabels="true" showTickMarks="true" value="250.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+         <effect>
+            <InnerShadow>
+               <color>
+                  <Color red="0.02" green="0.8" />
+               </color>
+            </InnerShadow>
+         </effect></Slider>
+      <Slider fx:id="blueSlider" max="255.0" minorTickCount="5" showTickLabels="true" showTickMarks="true" value="250.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+         <effect>
+            <InnerShadow>
+               <color>
+                  <Color red="0.02" green="0.6" blue="0.9" />
+               </color>
+            </InnerShadow>
+         </effect></Slider>
+      <Slider majorTickUnit="50.0" max="300.0" min="-300.0" minorTickCount="10" showTickLabels="true" showTickMarks="true" GridPane.columnIndex="1" GridPane.rowIndex="3" fx:id="xSlider" />
+      <Slider fx:id="ySlider" max="300.0" min="-300.0" minorTickCount="10" showTickLabels="true" showTickMarks="true" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+      <Slider fx:id="zSlider" majorTickUnit="50.0" max="300.0" min="-300.0" minorTickCount="10" showTickLabels="true" showTickMarks="true" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+      <Slider fx:id="radiusSlider" majorTickUnit="5.0" minorTickCount="1" showTickLabels="true" showTickMarks="true" value="60.0" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+      <Slider fx:id="azimuthSlider" majorTickUnit="50.0" max="360.0" minorTickCount="10" showTickLabels="true" showTickMarks="true" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+      <Slider fx:id="altitudeSlider" majorTickUnit="10.0" max="89.0" min="-89.0" minorTickCount="1" showTickLabels="true" showTickMarks="true" GridPane.columnIndex="1" GridPane.rowIndex="8" />
+      <ColorPicker fx:id="colorPicker" maxWidth="90.0" onAction="#selectColorPicker" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+      <ComboBox fx:id="spheresList" onAction="#selectSphere" promptText="Sphere 1" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+      <Button mnemonicParsing="false" onAction="#addNewSphere" text="Add new Sphere" GridPane.columnIndex="2" GridPane.rowIndex="4" />
+      <Button mnemonicParsing="false" onAction="#deleteSphere" text="Delete Sphere" GridPane.columnIndex="2" GridPane.rowIndex="5" />
+      <Button mnemonicParsing="false" onAction="#save" text="Save" GridPane.columnIndex="2" GridPane.rowIndex="6" />
+   </children>
+   <padding>
+      <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+   </padding>
+</GridPane>
